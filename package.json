@@ -1,0 +1,10 @@
+{
+  "name": "ahhveedaa-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd ahhveedaa && npm install --legacy-peer-deps && npm run build",
+    "dev": "cd ahhveedaa && npm run dev",
+    "start": "cd ahhveedaa && npm start"
+  }
+}

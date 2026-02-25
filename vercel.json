@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd ahhveedaa && npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "ahhveedaa/.next",
-  "installCommand": "cd ahhveedaa && npm install --legacy-peer-deps"
-}

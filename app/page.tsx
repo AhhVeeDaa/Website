@@ -1,3 +1,5 @@
+import AdSense from "../components/AdSense";
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center px-8 py-32">
@@ -44,6 +46,10 @@ export default function Home() {
             <h3 className="text-lg font-semibold mb-2">Contact</h3>
             <p className="text-gray-400">Get in touch with me</p>
           </a>
+        </div>
+        {/* sample ad unit */}
+        <div className="mt-12 w-full">
+          <AdSense />
         </div>
       </div>
     </main>

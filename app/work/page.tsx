@@ -11,10 +11,6 @@ export default function Work() {
     {
       title: "Andri's Glide (Writing)",
       description: "Narrative short story highlighting social issues in London estates, recognized by community initiatives and youth programs."
-    },
-    {
-      title: "SignalFlow (Tech/Workshop)",
-      description: "A live tech-music integration project demonstrating real-time modulation and interactive audiovisual systems in collaboration with emerging creatives."
     }
   ];
 
@@ -32,6 +28,33 @@ export default function Work() {
                 <p className="text-gray-400 leading-relaxed">{project.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* media embeds */}
+        <div className="space-y-16">
+          <div>
+            <h3 className="text-xl font-semibold text-gray-200 mb-4">Music</h3>
+            <div className="w-full rounded-xl overflow-hidden">
+              <iframe data-testid="embed-iframe" className="w-full h-[152px]" style={{borderRadius:12}} src="https://open.spotify.com/embed/artist/5t9rlutPW2FIX8CKYOilBs?utm_source=generator&theme=0" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-200 mb-4">Media</h3>
+            <div className="aspect-video w-full rounded-xl overflow-hidden">
+              <iframe width="560" height="315" className="w-full h-full" src="https://www.youtube.com/embed/zaDNnm3yyWA?si=JaetSh6a97KkM2KO" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-gray-200 mb-4">Writing</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <a href="https://read.amazon.co.uk/sample/B0GMQZGFLL?clientId=share" target="_blank" rel="noopener noreferrer" className="border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition-colors duration-300">
+                <h4 className="text-lg font-medium text-gray-100 mb-2">TOP GIRL</h4>
+              </a>
+              <a href="https://read.amazon.co.uk/sample/B0G5PTF64N?clientId=share" target="_blank" rel="noopener noreferrer" className="border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition-colors duration-300">
+                <h4 className="text-lg font-medium text-gray-100 mb-2">WITNESS</h4>
+              </a>
+            </div>
           </div>
         </div>
 

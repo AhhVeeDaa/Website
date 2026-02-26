@@ -17,6 +17,13 @@ export default function Inventions() {
             Additional hardware and signal frameworks are under private development. Each concept pushes the boundary between creativity and technology, hinting at innovations that will redefine interaction, media, and systems. Strategic collaborations may unlock early insights.
           </p>
         </div>
+        
+        <div className="mt-16 bg-gray-900/50 border border-gray-700 rounded-lg p-8">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-200">Ubuntu.io</h2>
+          <p className="text-gray-400 leading-relaxed">
+            Ubuntu.io is a systems-driven digital framework exploring decentralised collaboration, creative infrastructure, and intelligent network design. Rooted in the philosophy of shared advancement, it merges technology, autonomy, and scalable cultural architecture.
+          </p>
+        </div>
       </div>
     </main>
   )

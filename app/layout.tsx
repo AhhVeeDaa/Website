@@ -1,11 +1,21 @@
-import { Metadata } from 'next';
-import { RootLayout } from './components/RootLayout';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Your App Title',
-  description: 'Your App Description',
+  title: "AhhVeeDaa — Creative Technologist",
+  description: "Creative Technologist & Media Architect building culture, systems, and signal across media, music, authorship and advanced technology.",
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <RootLayout>{children}</RootLayout>;
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        {children}
+      </body>
+    </html>
+  );
 }

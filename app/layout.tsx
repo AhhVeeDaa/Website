@@ -1,12 +1,20 @@
-import 'styles/globals.css';
-import { useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
-function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    document.body.classList.add('antialiased');
-  }, []);
+// Metadata export
+export const metadata = {
+  title: 'Your Site Title',
+  description: 'Description of your site',
+};
 
-  return <Component {...pageProps} />;
-}
+const Layout = ({ children }) => {
+  return (
+    <>
+      <Navbar />
+      <main>{children}</main>
+      <Footer />
+    </>
+  );
+};
 
-export default MyApp;
+export default Layout;

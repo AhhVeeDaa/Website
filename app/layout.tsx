@@ -1,21 +1,14 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "AhhVeeDaa — Creative Technologist",
-  description: "Creative Technologist & Media Architect building culture, systems, and signal across media, music, authorship and advanced technology.",
+  title: 'AhhVeeDaa — Creative Technologist',
+  description: 'Portfolio of AhhVeeDaa, showcasing creative technology work.'
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
-      </body>
+    <html className='antialiased'>
+      <body>{children}</body>
     </html>
   );
 }

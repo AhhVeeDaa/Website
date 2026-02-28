@@ -1,33 +1,12 @@
 // contact.ts
 
-import { Handler } from 'aws-lambda';
-
 interface ContactFormSubmission {
     name: string;
     email: string;
     message: string;
 }
 
-export const handler: Handler = async (event) => {
-    const submission: ContactFormSubmission = JSON.parse(event.body);
-    
-    // Analyze the submission content for categorization
-    const category = categorizeSubmission(submission.message);
-    
-    // Process the submission (e.g., save to database, send email, etc.)
-    await processSubmission(submission, category);
-    
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            message: 'Submission received',
-            category,
-        }),
-    };
-};
-
-function categorizeSubmission(message: string): string {
-    // Basic keyword categorization logic
+export function categorizeSubmission(message: string): string {
     if (message.includes('support')) {
         return 'Support Inquiry';
     } else if (message.includes('sales')) {
@@ -37,7 +16,16 @@ function categorizeSubmission(message: string): string {
     }
 }
 
-async function processSubmission(submission: ContactFormSubmission, category: string) {
-    // Implement submission processing logic here
+export async function processSubmission(submission: ContactFormSubmission, category: string) {
     console.log(`Processing submission from ${submission.name} categorized as ${category}.`);
+}
+
+export async function handleContactSubmission(body: string) {
+    const submission: ContactFormSubmission = JSON.parse(body);
+    const category = categorizeSubmission(submission.message);
+    await processSubmission(submission, category);
+    return {
+        message: 'Submission received',
+        category,
+    };
 }

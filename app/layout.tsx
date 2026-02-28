@@ -1,45 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import "./globals.css";
+// Removed unsupported Geist font imports from next/font/google
+// and replaced with standard antialiased class
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata: Metadata = {
-  title: "AhhVeeDaa — Creative Technologist",
-  description: "Creative Technologist & Media Architect building culture, systems, and signal across media, music, authorship and advanced technology.",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6772389606110366"
-          crossOrigin="anonymous"
-        ></script>
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <div className="antialiased">
+      {children}
+    </div>
   );
 }

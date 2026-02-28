@@ -1,10 +1,12 @@
-// Removed unsupported Geist font imports from next/font/google
-// and replaced with standard antialiased class
+import 'styles/globals.css';
+import { useEffect } from 'react';
 
-export default function Layout({ children }) {
-  return (
-    <div className="antialiased">
-      {children}
-    </div>
-  );
+function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    document.body.classList.add('antialiased');
+  }, []);
+
+  return <Component {...pageProps} />;
 }
+
+export default MyApp;

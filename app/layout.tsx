@@ -1,20 +1,11 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import { Metadata } from 'next';
+import { RootLayout } from './components/RootLayout';
 
-// Metadata export
-export const metadata = {
-  title: 'Your Site Title',
-  description: 'Description of your site',
+export const metadata: Metadata = {
+  title: 'Your App Title',
+  description: 'Your App Description',
 };
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-    </>
-  );
-};
-
-export default Layout;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <RootLayout>{children}</RootLayout>;
+}

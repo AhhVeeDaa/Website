@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="flex gap-8 text-sm">
         <Link href="/about" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">About</Link>
         <Link href="/work" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">Work</Link>
-        <Link href="/media" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">Media</Link>
+        <Link href="/shop" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">Shop</Link>
         <Link href="/inventions" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">Inventions</Link>
         <Link href="/contact" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">Contact</Link>
       </div>

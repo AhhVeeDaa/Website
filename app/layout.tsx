@@ -4,8 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'AhhVeeDaa — Creative Technologist & Media Architect',
-  description: 'Portfolio of AhhVeeDaa — building culture, systems, and signal across media, music, authorship and advanced technology.',
+  title: 'AhhVeeDaa',
+  description: 'Systems architect building proprietary infrastructure across media, sound, literature and technology.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

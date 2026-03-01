@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: 'AhhVeeDaa Contact Form <onboarding@resend.dev>',
       to: 'avidabuyombo1@gmail.com',
-      replyTo: email,
+      reply_to: email,
       subject: subject ? `[Contact] ${subject}` : `[Contact] Message from ${name}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px;">

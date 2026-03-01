@@ -10,10 +10,10 @@ export default function Inventions() {
             <p className="text-gray-500">Proprietary architecture in development.</p>
           </div>
 
-          <div className="border border-gray-800 rounded-lg p-8">
-            <h2 className="text-2xl font-semibold mb-3 text-gray-200">Ubuntu.io</h2>
+          <a href="https://ubuntuhub.io" target="_blank" rel="noopener noreferrer" className="block border border-gray-800 rounded-lg p-8 hover:border-purple-500/40 hover:bg-gray-900/30 transition-all duration-300">
+            <h2 className="text-2xl font-semibold mb-3 text-gray-200">Ubuntu Hub</h2>
             <p className="text-gray-500">Decentralised creative infrastructure. Private development.</p>
-          </div>
+          </a>
 
           <div className="border border-gray-800 rounded-lg p-8">
             <h2 className="text-2xl font-semibold mb-3 text-gray-200">Future Systems</h2>

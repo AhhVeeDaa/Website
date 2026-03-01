@@ -1,1 +1,32 @@
-{"name": "ahhveedaa-website","version": "2.0.0","description": "Creative Architect & Media Technologist - Premium positioning with AI contact infrastructure","private": true,"scripts": {"dev": "next dev","build": "next build","start": "next start","lint": "next lint"},"dependencies": {"react": "^18.2.0","react-dom": "^18.2.0","next": "^14.0.0","@anthropic-ai/sdk": "^0.9.0"},"devDependencies": {"typescript": "^5.3.0","@types/react": "^18.2.0","@types/react-dom": "^18.2.0","@types/node": "^20.0.0","tailwindcss": "^3.4.0","postcss": "^8.4.0","autoprefixer": "^10.4.0","eslint": "^8.0.0","eslint-config-next": "^14.0.0"},"engines": {"node": ">=18.0.0"}}
+{
+  "name": "ahhveedaa-website",
+  "version": "2.0.0",
+  "description": "Creative Architect & Media Technologist - Premium positioning with AI contact infrastructure",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "^14.0.0",
+    "resend": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/node": "^20.0.0",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

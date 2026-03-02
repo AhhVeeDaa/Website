@@ -4,9 +4,12 @@ export default function About() {
       <div className="max-w-3xl">
         <h1 className="text-5xl font-bold mb-16 tracking-tight">About</h1>
 
-        <p className="text-xl text-gray-300 leading-relaxed">
-          Systems architect. Building proprietary infrastructure across media, sound, literature and technology.
-        </p>
+        <div className="space-y-6 text-xl text-gray-300 leading-relaxed">
+          <p>Creative technologist and media architect operating across sound, narrative, and systems design.</p>
+          <p>My work spans music, writing, broadcast, and experimental technology — each discipline informing the other.</p>
+          <p>I build independently, develop proprietary concepts, and explore the intersection of culture and computation.</p>
+          <p>This platform presents selected outputs. The broader architecture continues to evolve.</p>
+        </div>
       </div>
     </main>
   )

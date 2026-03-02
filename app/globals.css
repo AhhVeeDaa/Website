@@ -23,3 +23,48 @@ body {
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.03em;
 }
+
+/* Hero grid utility: structural visual layer for large displays */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06; /* structural on large screens */
+  background-image: linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Mid-size screens: reduce visual weight and increase grid spacing */
+@media (max-width: 1024px) {
+  .hero-grid {
+    opacity: 0.04;
+    background-size: 56px 56px;
+  }
+}
+
+/* Small screens: make the grid faint */
+@media (max-width: 640px) {
+  .hero-grid {
+    opacity: 0.02;
+    background-size: 72px 72px;
+  }
+}
+
+/* Very small screens: hide grid to avoid clutter/overlap */
+@media (max-width: 420px) {
+  .hero-grid {
+    display: none;
+  }
+}
+
+/* Utility to ensure hero content sits above the grid */
+.hero-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Slight helper: reduce heading size if it overflows on very small viewports */
+@media (max-width: 420px) {
+  h1 { font-size: clamp(2rem, 6vw, 3.2rem); }
+}

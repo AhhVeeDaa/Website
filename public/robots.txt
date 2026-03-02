@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahhveedaa.com/sitemap.xml
+Host: https://ahhveedaa.com

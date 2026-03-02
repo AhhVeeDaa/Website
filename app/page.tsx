@@ -1,14 +1,18 @@
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center px-8 py-32">
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+      <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
 
       <div className="relative text-center max-w-4xl">
-        <h1 className="text-7xl sm:text-9xl font-bold mb-6 tracking-tighter">
+        <h1 className="text-8xl sm:text-[9.5rem] font-extrabold mb-6 tracking-tighter">
           AhhVeeDaa
         </h1>
-        <p className="text-base sm:text-lg text-gray-600 mb-24 max-w-md mx-auto leading-relaxed">
+        <p className="text-base sm:text-lg text-gray-600 mb-6 max-w-md mx-auto leading-relaxed">
           Building proprietary systems across media, sound, literature and technology.
+        </p>
+
+        <p className="text-sm text-gray-500 mb-24 max-w-md mx-auto leading-relaxed">
+          Live infrastructure in development.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">

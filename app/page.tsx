@@ -1,3 +1,28 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'AhhVeeDaa — Creative Technologist & Media Architect',
+  description:
+    'Creative technologist and media architect building proprietary systems across media, sound, narrative, and computation. Independent infrastructure in development.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'AhhVeeDaa — Creative Technologist & Media Architect',
+    description:
+      'Creative technologist and media architect building proprietary systems across media, sound, narrative, and computation.',
+    url: 'https://ahhveedaa.com',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AhhVeeDaa — Creative Technologist & Media Architect',
+      },
+    ],
+  },
+}
+
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-center px-8 py-32">

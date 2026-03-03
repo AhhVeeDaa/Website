@@ -1,27 +1,10 @@
 import React from 'react';
-import './styles.css';
 
-const Page = () => {
+export default function Page() {
   return (
-    <div className="hero" style={{
-      backgroundImage: "url('https://your-instagram-background-url.com')",
-      backgroundAttachment: 'fixed',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      height: '100vh',
-      position: 'relative',
-    }}>
-      <div className="overlay" style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.3)', // 30% tint
-      }}></div>
-      <h1 className="title">Welcome to our website</h1>
+    <div className="flex items-center justify-center w-full h-screen bg-cover" style={{ backgroundImage: "url('https://example.com/hotlinked-image.jpg')" }}>
+      {/* Existing metadata can be maintained here */}
+      <h1 className="text-white">Your existing content here</h1>
     </div>
   );
-};
-
-export default Page;
+}

@@ -1,3 +1,28 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Shop',
+  description:
+    'Limited editions and proprietary designs by AhhVeeDaa. Museum-grade collectibles and original artwork available internationally.',
+  alternates: {
+    canonical: '/shop',
+  },
+  openGraph: {
+    title: 'Shop | AhhVeeDaa',
+    description:
+      'Limited editions and proprietary designs. Museum-grade collectibles and original artwork.',
+    url: 'https://ahhveedaa.com/shop',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AhhVeeDaa — Shop',
+      },
+    ],
+  },
+}
+
 export default function Shop() {
   const products = [
     {

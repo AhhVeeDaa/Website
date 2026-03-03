@@ -1,3 +1,28 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About',
+  description:
+    'Creative technologist and media architect operating across sound, narrative, and systems design. Independent builder exploring the intersection of culture and computation.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About | AhhVeeDaa',
+    description:
+      'Creative technologist and media architect operating across sound, narrative, and systems design.',
+    url: 'https://ahhveedaa.com/about',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AhhVeeDaa — About',
+      },
+    ],
+  },
+}
+
 export default function About() {
   return (
     <main className="flex min-h-screen flex-col items-start px-8 py-24">

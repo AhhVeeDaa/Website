@@ -54,6 +54,18 @@ export default function Inventions() {
             <p className="text-gray-500 text-sm">More technical details will be shared in future research releases.</p>
           </div>
 
+          {/* Ubuntu Hub */}
+          <a href="https://ubuntuhub.io" target="_blank" rel="noopener noreferrer" className="block border border-gray-800 rounded-lg p-8 hover:border-purple-500/30 hover:bg-gray-900/20 transition-all duration-500">
+            <div className="flex items-center gap-4 mb-6">
+              <h2 className="text-2xl font-semibold text-gray-200">Ubuntu Hub</h2>
+              <span className="inline-block px-3 py-1 text-xs font-medium border border-gray-700 rounded-full text-gray-400">Infrastructure</span>
+            </div>
+            <div className="space-y-4 text-gray-300 leading-relaxed">
+              <p>Decentralised infrastructure for sovereign AI compute. A platform designed to anchor African intelligence to African energy.</p>
+              <p className="text-gray-500 text-sm">Private development. Visit ubuntuhub.io →</p>
+            </div>
+          </a>
+
           {/* Cultural Infrastructure — Radio 243 */}
           <div className="border border-gray-800 rounded-lg p-8 hover:border-purple-500/30 hover:bg-gray-900/20 transition-all duration-500">
             <div className="flex items-center gap-4 mb-6">

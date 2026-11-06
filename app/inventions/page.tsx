@@ -1,116 +1,62 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Inventions',
   description:
-    'Early-stage concepts spanning hardware, media systems and digital infrastructure. Ideas at the intersection of technology, culture and imagination.',
-  alternates: {
-    canonical: '/inventions',
-  },
+    'Research and concept work across photonics, AI, sensing and computational perception. Selected explorations by Avida Buyombo.',
+  alternates: { canonical: '/inventions' },
   openGraph: {
     title: 'Inventions | AhhVeeDaa',
-    description:
-      'Early-stage concepts spanning hardware, media systems and digital infrastructure. Ideas at the intersection of technology, culture and imagination.',
+    description: 'Selected research and concepts across photonics, AI, sensing and computational perception.',
     url: 'https://ahhveedaa.com/inventions',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'AhhVeeDaa — Inventions',
-      },
-    ],
   },
 }
 
+const concepts = [
+  { title: 'Witness', status: 'Development', category: 'Physical AI companion', description: 'A mobile robotic companion concept with an articulated upper body. This product exploration is separate from the published book of the same name.', tone: 'text-violet-200' },
+  { title: 'VidaRide', status: 'Concept', category: 'Mobility', description: 'An early intelligent mobility and vehicle technology concept, distinct from the newer AVD automotive sensing direction.', tone: 'text-blue-200' },
+  { title: 'AVD AI Phone', status: 'Concept', category: 'AI-native device', description: 'Exploration of an AI-native mobile device and operating environment.', tone: 'text-teal-200' },
+  { title: 'Digital Twin of Africa', status: 'Research', category: 'Computational systems', description: 'An AI-driven digital representation and infrastructure concept.', tone: 'text-amber-200' },
+]
+
 export default function Inventions() {
   return (
-    <main className="flex min-h-screen flex-col items-start px-8 py-24">
-      <div className="max-w-4xl">
+    <main className="page-shell py-20 sm:py-28">
+      <header className="mb-14 max-w-3xl">
+        <p className="eyebrow mb-5">Private research environment</p>
+        <h1 className="text-5xl font-medium sm:text-7xl">Inventions &amp; explorations.</h1>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-lg">Selected research and concepts across sensing, photonics, AI and systems. Some work remains private; public notes stay at a high level.</p>
+      </header>
 
-        {/* Page Intro */}
-        <h1 className="text-5xl font-bold mb-6 tracking-tight">Inventions</h1>
-        <p className="text-xl text-gray-400 mb-12">Ideas at the intersection of technology, culture and imagination.</p>
-
-        <div className="space-y-6 text-lg text-gray-300 leading-relaxed mb-16">
-          <p>AhhVeeDaa develops early-stage concepts spanning hardware, media systems and digital infrastructure.</p>
-          <p>Some ideas remain private while in development. Others are shared as previews of what&apos;s coming.</p>
-          <p>The aim is simple: design systems that reshape how people create, communicate and experience technology.</p>
+      <section className="relative overflow-hidden rounded-3xl border border-violet-300/20 bg-gradient-to-br from-violet-500/[0.12] via-white/[0.03] to-blue-500/[0.08] p-7 sm:p-11">
+        <div className="pointer-events-none absolute -right-10 -top-20 h-80 w-80 rounded-full bg-violet-500/15 blur-[90px]" aria-hidden="true" />
+        <div className="relative flex flex-wrap items-center justify-between gap-4">
+          <p className="eyebrow">Featured research · In development</p><span className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/65">Research</span>
         </div>
+        <h2 className="relative mt-10 max-w-3xl text-4xl font-medium leading-tight sm:text-6xl">Advanced Visual Digitiser <span className="text-violet-200">(AVD)</span></h2>
+        <p className="relative mt-6 max-w-2xl text-base leading-7 text-white/70">A proprietary photonic signal-conditioning chip concept exploring visual sensing, photonics and computational perception.</p>
+        <p className="relative mt-5 max-w-2xl text-sm leading-6 text-white/45">Technical implementation details are not public. No schematics or unpublished technical materials are disclosed here.</p>
+      </section>
 
-        <div className="space-y-16">
+      <section className="mt-12 grid gap-4 md:grid-cols-2">
+        {concepts.map(({ title, status, category, description, tone }) => (
+          <article key={title} className="glass-panel rounded-2xl p-6 sm:p-7">
+            <div className="flex flex-wrap items-center justify-between gap-3"><p className={`eyebrow ${tone}`}>{category}</p><span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">{status}</span></div>
+            <h2 className="mt-8 text-2xl font-medium">{title}</h2><p className="mt-3 text-sm leading-6 text-muted">{description}</p>
+          </article>
+        ))}
+      </section>
 
-          {/* Featured Concept — AVD */}
-          <div className="border border-gray-800 rounded-lg p-8 hover:border-purple-500/30 hover:bg-gray-900/20 transition-all duration-500">
-            <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-2xl font-semibold text-gray-200">Advanced Visual Digitiser (AVD)</h2>
-              <span className="inline-block px-3 py-1 text-xs font-medium border border-gray-700 rounded-full text-gray-400">Concept</span>
-            </div>
-            <div className="space-y-4 text-gray-300 leading-relaxed mb-6">
-              <p>The Advanced Visual Digitiser (AVD) is an experimental chip concept designed to rethink how visual information is captured and processed.</p>
-              <p>Rather than treating vision as a traditional image pipeline, AVD explores new approaches to digitising visual environments at the hardware level.</p>
-              <p>The concept sits at the intersection of photonics, sensing and computational perception, with the goal of enabling new categories of visual technology.</p>
-            </div>
-            <p className="text-gray-500 text-sm">More technical details will be shared in future research releases.</p>
-          </div>
-
-          {/* Ubuntu Hub */}
-          <a href="https://ubuntuhub.io" target="_blank" rel="noopener noreferrer" className="block border border-gray-800 rounded-lg p-8 hover:border-purple-500/30 hover:bg-gray-900/20 transition-all duration-500">
-            <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-2xl font-semibold text-gray-200">Ubuntu Hub</h2>
-              <span className="inline-block px-3 py-1 text-xs font-medium border border-gray-700 rounded-full text-gray-400">Infrastructure</span>
-            </div>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>Decentralised infrastructure for sovereign AI compute. A platform designed to anchor African intelligence to African energy.</p>
-              <p className="text-gray-500 text-sm">Private development. Visit ubuntuhub.io →</p>
-            </div>
-          </a>
-
-          {/* Cultural Infrastructure — Radio 243 */}
-          <div className="border border-gray-800 rounded-lg p-8 hover:border-purple-500/30 hover:bg-gray-900/20 transition-all duration-500">
-            <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-2xl font-semibold text-gray-200">Radio 243</h2>
-              <span className="inline-block px-3 py-1 text-xs font-medium border border-gray-700 rounded-full text-gray-400">Coming Soon</span>
-            </div>
-            <div className="space-y-4 text-gray-300 leading-relaxed mb-6">
-              <p>Radio 243 is a future media platform inspired by the energy and culture of Kinshasa.</p>
-              <p>The concept begins as a local radio station format:</p>
-            </div>
-            <ul className="space-y-3 mb-6 pl-4">
-              <li className="text-gray-300 border-l border-gray-700 pl-4">Daytime programming focused on music and cultural conversation.</li>
-              <li className="text-gray-300 border-l border-gray-700 pl-4">Late night programming shifting toward deeper talk and storytelling.</li>
-            </ul>
-            <div className="space-y-4 text-gray-300 leading-relaxed mb-8">
-              <p>The project explores how radio, streaming and community media can evolve together.</p>
-              <p>Launch details coming soon.</p>
-              <p>For now, listen to the CPITP Playlist curated by AVD:</p>
-            </div>
-            <iframe
-              style={{ borderRadius: '12px', border: 0 }}
-              src="https://open.spotify.com/embed/playlist/22J212su8OrC7TS4cXjCRM?utm_source=generator&theme=0"
-              width="100%"
-              height="352"
-              allowFullScreen={true}
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            />
-          </div>
-
-          {/* Future Concepts */}
-          <div className="border border-gray-800 rounded-lg p-8 hover:border-purple-500/30 hover:bg-gray-900/20 transition-all duration-500">
-            <div className="flex items-center gap-4 mb-6">
-              <h2 className="text-2xl font-semibold text-gray-200">More Concepts in Development</h2>
-              <span className="inline-block px-3 py-1 text-xs font-medium border border-gray-700 rounded-full text-gray-400">Research</span>
-            </div>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p>Additional technology and media systems are currently in development.</p>
-              <p>Some will appear here as previews once they reach the right stage.</p>
-              <p>For now, they remain undisclosed.</p>
-            </div>
-          </div>
-
+      <section className="mt-12 grid gap-4 md:grid-cols-2">
+        <a href="https://ubuntuhub.io" target="_blank" rel="noopener noreferrer" className="universe-card rounded-2xl p-7">
+          <p className="eyebrow text-teal-200">AI infrastructure · Development</p><h2 className="mt-8 text-2xl font-medium">Ubuntu Hub</h2><p className="mt-3 text-sm leading-6 text-muted">Sovereign AI orchestration and infrastructure, with African AI infrastructure and governance in focus. Inga-powered compute remains a longer-term vision.</p><span className="mt-6 inline-block text-sm text-teal-200">Visit Ubuntu Hub ↗</span>
+        </a>
+        <div className="glass-panel rounded-2xl p-7">
+          <p className="eyebrow text-amber-200">Media platform · Coming soon</p><h2 className="mt-8 text-2xl font-medium">Radio 243</h2><p className="mt-3 text-sm leading-6 text-muted">A Kinshasa-inspired radio platform for daytime music and cultural conversation, with late-night talk and storytelling.</p><a href="https://open.spotify.com/playlist/22J212su8OrC7TS4cXjCRM" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block text-sm text-amber-200 hover:text-white">Explore the CPITP playlist ↗</a>
         </div>
-      </div>
+      </section>
+
+      <p className="mt-12 border-t border-white/10 pt-7 text-sm text-white/45">Additional private concepts remain undisclosed while in exploration.</p>
     </main>
   )
 }

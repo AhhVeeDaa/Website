@@ -1,69 +1,53 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Shop',
   description:
-    'Limited editions and proprietary designs by AhhVeeDaa. Museum-grade collectibles and original artwork available internationally.',
-  alternates: {
-    canonical: '/shop',
-  },
+    'Selected artwork, objects and design experiments by AhhVeeDaa. Visit the Etsy shop for current listings.',
+  alternates: { canonical: '/shop' },
   openGraph: {
     title: 'Shop | AhhVeeDaa',
-    description:
-      'Limited editions and proprietary designs. Museum-grade collectibles and original artwork.',
+    description: 'Artwork, objects and design experiments by AhhVeeDaa.',
     url: 'https://ahhveedaa.com/shop',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'AhhVeeDaa — Shop',
-      },
-    ],
   },
 }
 
 export default function Shop() {
-  const products = [
-    {
-      title: "AVD NFT Acrylic Wall Panel",
-      description: "Limited edition acrylic wall panel featuring the AVD NFT artwork. Premium quality, museum-grade acrylic.",
-      url: "https://ahhveedaa.etsy.com/uk/listing/1373729875/avd-nft-acrylic-wall-panel",
-      status: "Available",
-    },
-  ];
-
   return (
-    <main className="flex min-h-screen flex-col items-start px-8 py-24">
-      <div className="max-w-4xl w-full">
-        <h1 className="text-5xl font-bold mb-4 tracking-tight">Shop</h1>
-        <p className="text-gray-500 mb-16">Limited editions. Proprietary designs.</p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {products.map((product, idx) => (
-            <a
-              key={idx}
-              href={product.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group border border-gray-800 rounded-xl p-8 hover:border-purple-500/50 hover:bg-gray-900/30 transition-all duration-300"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs uppercase tracking-widest text-purple-400/80">{product.status}</span>
-                <span className="text-gray-600 text-xs group-hover:text-gray-400 transition-colors">↗</span>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-100 mb-3 group-hover:text-purple-400 transition-colors">{product.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{product.description}</p>
-            </a>
-          ))}
+    <main className="page-shell py-20 sm:py-28">
+      <header className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        <div className="max-w-3xl">
+          <p className="eyebrow mb-5">Design &amp; commerce</p>
+          <h1 className="text-5xl font-medium sm:text-7xl">Objects for the world being made.</h1>
+          <p className="mt-6 text-base leading-7 text-muted sm:text-lg">Artwork, physical editions, clothing concepts and digital product experiments.</p>
         </div>
+        <a href="https://ahhveedaa.etsy.com/uk" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-5 text-sm text-white transition-colors hover:border-violet-300/50 hover:bg-violet-300/10">Visit Etsy shop ↗</a>
+      </header>
 
-        <div className="mt-24 border-t border-gray-800 pt-12">
-          <p className="text-gray-600 text-sm">
-            All products ship internationally via Etsy. For bulk or custom orders, <a href="/contact" className="text-gray-400 hover:text-purple-400 transition-colors">contact directly</a>.
-          </p>
+      <section aria-label="Current shop listings" className="grid gap-5 md:grid-cols-2">
+        <a
+          href="https://ahhveedaa.etsy.com/uk/listing/1373729875/avd-nft-acrylic-wall-panel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="universe-card rounded-2xl p-7 sm:p-9"
+        >
+          <div className="flex items-center justify-between"><span className="eyebrow text-violet-200">Existing Etsy listing</span><span className="text-white/50" aria-hidden="true">↗</span></div>
+          <div className="my-12 flex aspect-[1.4] items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-[radial-gradient(ellipse_at_55%_45%,rgba(130,100,255,.25),transparent_44%),linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.01))]">
+            <span className="text-center text-4xl font-semibold tracking-[-0.08em] text-white/75 sm:text-6xl">AVD<span className="text-violet-300">/</span>ART</span>
+          </div>
+          <h2 className="text-2xl font-medium">AVD NFT Acrylic Wall Panel</h2>
+          <p className="mt-3 text-sm leading-6 text-muted">A physical wall-panel edition featuring AVD NFT artwork. Follow the Etsy listing for current availability and details.</p>
+        </a>
+        <div className="glass-panel rounded-2xl p-7 sm:p-9">
+          <p className="eyebrow text-amber-200">Design experiments</p>
+          <h2 className="mt-8 text-2xl font-medium">Clothing &amp; digital objects</h2>
+          <p className="mt-3 text-sm leading-6 text-muted">AVD clothing concepts, Teemill merchandise and digital or physical product experiments form part of the wider design practice. Check the linked shop for current listings.</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="https://ahhveedaa.etsy.com/uk" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 transition-colors hover:border-violet-300/40 hover:text-white">Etsy ↗</a>
+          </div>
         </div>
-      </div>
+      </section>
+      <p className="mt-10 border-t border-white/10 pt-6 text-sm text-white/45">Product availability, specifications and fulfilment details are maintained by the linked shops.</p>
     </main>
   )
 }

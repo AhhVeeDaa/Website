@@ -140,7 +140,7 @@ export default function Work() {
             <div className="aspect-video w-full">
               <iframe
                 className="h-full w-full"
-                src="https://www.youtube.com/embed/zaDNnm3yyWA?si=JaetSh6a97KkM2KO"
+                src="https://www.youtube.com/embed/zaDNnm3yyWA?si=OTcMDvZ1zNc2oMeS"
                 title="AhhVeeDaa selected video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"

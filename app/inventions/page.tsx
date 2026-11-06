@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import WitnessOneModel from '@/components/WitnessOneModel'
+import ArtworkLightbox from '@/components/ArtworkLightbox'
 
 export const metadata: Metadata = {
   title: 'Inventions',
-  description:
-    'Research and concept work across photonics, AI, sensing and computational perception. Selected explorations by Avida Buyombo.',
+  description: 'Selected inventions and concepts by Avida Buyombo.',
   alternates: { canonical: '/inventions' },
   openGraph: {
     title: 'Inventions | AhhVeeDaa',
-    description: 'Selected research and concepts across photonics, AI, sensing and computational perception.',
+    description: 'Selected inventions and concepts by Avida Buyombo.',
     url: 'https://ahhveedaa.com/inventions',
   },
 }
@@ -17,7 +16,6 @@ export const metadata: Metadata = {
 const concepts = [
   { title: 'AVD AI Phone', status: 'Concept', category: 'AI-native device', tone: 'text-teal-200' },
   { title: 'Digital Twin of Africa', status: 'Concept in development', category: 'Computational systems', tone: 'text-amber-200' },
-  { title: 'Kora', status: 'Concept in development', category: 'Concept', tone: 'text-amber-200' },
   { title: 'AVDNET', status: 'Concept in development', category: 'Concept', tone: 'text-blue-200' },
   { title: 'Lekky', status: 'Concept in development', category: 'Concept', tone: 'text-violet-200' },
 ]
@@ -28,7 +26,7 @@ export default function Inventions() {
       <header className="mb-14 max-w-3xl">
         <p className="eyebrow mb-5">Private research environment</p>
         <h1 className="text-5xl font-medium sm:text-7xl">Inventions &amp; explorations.</h1>
-        <p className="mt-6 text-base leading-7 text-muted sm:text-lg">Selected research and concepts across sensing, photonics, AI and systems. Some work remains private; public notes stay at a high level.</p>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-lg">Selected concepts and explorations. Some work remains private; public notes stay at a high level.</p>
       </header>
 
       <section className="relative overflow-hidden rounded-3xl border border-violet-300/20 bg-gradient-to-br from-violet-500/[0.12] via-white/[0.03] to-blue-500/[0.08] p-7 sm:p-11">
@@ -36,13 +34,35 @@ export default function Inventions() {
         <div className="relative flex flex-wrap items-center justify-between gap-4">
           <p className="eyebrow">Featured research · In development</p><span className="rounded-full border border-white/15 px-3 py-1 text-xs text-white/65">Research</span>
         </div>
-        <h2 className="relative mt-10 max-w-3xl text-4xl font-medium leading-tight sm:text-6xl">Advanced Visual Digitiser <span className="text-violet-200">(AVD)</span></h2>
-        <p className="relative mt-6 max-w-2xl text-base leading-7 text-white/70">A proprietary photonic signal-conditioning chip concept exploring visual sensing, photonics and computational perception.</p>
-        <p className="relative mt-5 max-w-2xl text-sm leading-6 text-white/45">Technical implementation details are not public. No schematics or unpublished technical materials are disclosed here.</p>
+        <h2 className="relative mt-10 max-w-3xl text-4xl font-medium leading-tight sm:text-6xl">AVD</h2>
+        <p className="relative mt-6 max-w-2xl text-base leading-7 text-white/70">Concept in development. Further details remain private.</p>
       </section>
 
       <section className="mt-8">
-        <WitnessOneModel />
+        <article className="glass-panel overflow-hidden rounded-2xl">
+          <div className="flex flex-wrap items-start justify-between gap-4 p-6 sm:p-7">
+            <div>
+              <div className="flex flex-wrap items-center gap-3">
+                <p className="eyebrow text-blue-200">Witness One · Physical AI companion</p>
+                <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">Concept in development</span>
+              </div>
+              <h2 className="mt-3 text-xl font-medium">Witness One</h2>
+            </div>
+            <ArtworkLightbox
+              src="/images/projects/witness-one-concept.png"
+              alt="Witness One concept artwork showing a small robot on a two-wheeled base."
+              title="Witness One"
+            />
+          </div>
+          <Image
+            src="/images/projects/witness-one-concept.png"
+            alt="Witness One concept artwork showing a small robot on a two-wheeled base."
+            width={1199}
+            height={1312}
+            sizes="(max-width: 768px) 100vw, 76rem"
+            className="h-auto w-full"
+          />
+        </article>
       </section>
 
       <section className="mt-12 grid gap-4 md:grid-cols-2">

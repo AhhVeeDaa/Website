@@ -12,13 +12,5 @@ export const metadata: Metadata = {
     description:
       'Strategic enquiries only. Reach AhhVeeDaa for collaborations and partnership opportunities.',
     url: 'https://ahhveedaa.com/contact',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'AhhVeeDaa — Contact',
-      },
-    ],
   },
 }

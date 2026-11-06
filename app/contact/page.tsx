@@ -29,92 +29,54 @@ export default function Contact() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-start px-8 py-24">
-      <div className="max-w-4xl w-full">
-        <h1 className="text-5xl font-bold mb-4 tracking-tight">Contact</h1>
-        <p className="text-gray-600 mb-16">Strategic enquiries only.</p>
+    <main className="page-shell py-20 sm:py-28">
+      <header className="mb-14 max-w-3xl">
+        <p className="eyebrow mb-5">Contact / Enquiries</p>
+        <h1 className="text-5xl font-medium sm:text-7xl">Start a conversation.</h1>
+        <p className="mt-6 text-base leading-7 text-muted sm:text-lg">For creative, media and technology enquiries, use the form or reach out directly.</p>
+      </header>
 
-        <form onSubmit={handleSubmit} className="space-y-6 mb-20">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,.85fr)]">
+        <form onSubmit={handleSubmit} className="glass-panel space-y-6 rounded-2xl p-6 sm:p-8">
           <div>
-            <label htmlFor="name" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Name</label>
-            <input
-              id="name"
-              type="text"
-              required
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-700 focus:border-purple-500/60 focus:outline-none transition-colors"
-              placeholder="Your name"
-            />
+            <label htmlFor="name" className="mb-2 block text-xs uppercase tracking-widest text-white/55">Name</label>
+            <input id="name" type="text" autoComplete="name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-white/25 transition-colors focus:border-violet-300/50 focus:outline-none" placeholder="Your name" />
           </div>
-
           <div>
-            <label htmlFor="email" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Email</label>
-            <input
-              id="email"
-              type="email"
-              required
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-700 focus:border-purple-500/60 focus:outline-none transition-colors"
-              placeholder="your@email.com"
-            />
+            <label htmlFor="email" className="mb-2 block text-xs uppercase tracking-widest text-white/55">Email</label>
+            <input id="email" type="email" autoComplete="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-white/25 transition-colors focus:border-violet-300/50 focus:outline-none" placeholder="you@example.com" />
           </div>
-
           <div>
-            <label htmlFor="subject" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Subject</label>
-            <input
-              id="subject"
-              type="text"
-              value={form.subject}
-              onChange={(e) => setForm({ ...form, subject: e.target.value })}
-              className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-700 focus:border-purple-500/60 focus:outline-none transition-colors"
-              placeholder="Optional"
-            />
+            <label htmlFor="subject" className="mb-2 block text-xs uppercase tracking-widest text-white/55">Subject <span className="normal-case tracking-normal text-white/35">(optional)</span></label>
+            <input id="subject" type="text" value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-white/25 transition-colors focus:border-violet-300/50 focus:outline-none" placeholder="What would you like to discuss?" />
           </div>
-
           <div>
-            <label htmlFor="message" className="block text-xs uppercase tracking-widest text-gray-500 mb-2">Message</label>
-            <textarea
-              id="message"
-              required
-              rows={5}
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-700 focus:border-purple-500/60 focus:outline-none transition-colors resize-none"
-              placeholder="Your message"
-            />
+            <label htmlFor="message" className="mb-2 block text-xs uppercase tracking-widest text-white/55">Message</label>
+            <textarea id="message" required rows={5} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full resize-y rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-white placeholder-white/25 transition-colors focus:border-violet-300/50 focus:outline-none" placeholder="Your message" />
           </div>
-
-          <button
-            type="submit"
-            disabled={status === 'sending'}
-            className="border border-gray-800 rounded-xl px-8 py-3 text-white font-medium hover:border-purple-500/40 hover:bg-gray-900/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {status === 'sending' ? 'Sending...' : 'Send'}
-          </button>
-
-          {status === 'sent' && (
-            <p className="text-purple-400 text-sm mt-4">Message sent successfully.</p>
-          )}
-          {status === 'error' && (
-            <p className="text-red-400 text-sm mt-4">Something went wrong. Try again.</p>
-          )}
+          <div className="flex flex-wrap items-center gap-5">
+            <button type="submit" disabled={status === 'sending'} className="min-h-12 rounded-full bg-white px-7 text-sm font-medium text-black transition-colors hover:bg-violet-200 disabled:cursor-not-allowed disabled:opacity-50">
+              {status === 'sending' ? 'Sending…' : 'Send message'}
+            </button>
+            {status === 'sent' && <p role="status" className="text-sm text-teal-200">Message sent successfully.</p>}
+            {status === 'error' && <p role="alert" className="text-sm text-red-300">Something went wrong. Try again.</p>}
+          </div>
         </form>
 
-        <div className="space-y-8 border-t border-gray-800/50 pt-12">
-          <div>
-            <h3 className="text-xs uppercase tracking-widest text-gray-500 mb-3">Direct</h3>
-            <a href="https://wa.me/447944958815" target="_blank" rel="noopener noreferrer" className="inline-block border border-gray-800 rounded-xl px-6 py-3 text-white font-medium hover:border-purple-500/40 hover:bg-gray-900/30 transition-all duration-300">
-              WhatsApp
-            </a>
+        <aside className="space-y-4">
+          <div className="glass-panel rounded-2xl p-6">
+            <p className="eyebrow mb-5">Direct contact</p>
+            <a href="https://wa.me/447944958815" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-5 text-sm text-white transition-colors hover:border-violet-300/40 hover:bg-violet-300/10">WhatsApp ↗</a>
           </div>
-
-          <div>
-            <h3 className="text-xs uppercase tracking-widest text-gray-500 mb-3">Email</h3>
-            <a href="mailto:Avida@ahhveedaa.com" className="text-gray-400 hover:text-purple-400 transition-colors">Avida@ahhveedaa.com</a>
+          <div className="glass-panel rounded-2xl p-6">
+            <p className="eyebrow mb-5">Email</p>
+            <div className="space-y-3 text-sm">
+              <a href="mailto:avidabuyombo1@gmail.com" className="block text-white/75 transition-colors hover:text-white">avidabuyombo1@gmail.com</a>
+              <a href="mailto:Avida@ahhveedaa.com" className="block text-white/75 transition-colors hover:text-white">Avida@ahhveedaa.com</a>
+            </div>
           </div>
-        </div>
+          <p className="px-2 text-xs leading-5 text-white/40">The contact form continues to use the existing email delivery endpoint.</p>
+        </aside>
       </div>
     </main>
   )

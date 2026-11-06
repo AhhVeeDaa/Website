@@ -1,20 +1,60 @@
-'use client';
+'use client'
 
-import Link from "next/link";
+import Link from 'next/link'
+import { useState } from 'react'
+
+const links = [
+  { href: '/about', label: 'About' },
+  { href: '/work', label: 'Work' },
+  { href: '/inventions', label: 'Inventions' },
+  { href: '/ventures', label: 'Ventures' },
+  { href: '/shop', label: 'Shop' },
+]
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
-    <nav className="fixed top-0 left-0 right-0 w-full flex justify-between items-center px-8 py-6 z-50 bg-black/80 backdrop-blur-md border-b border-gray-900/50">
-      <Link href="/" className="text-lg font-bold tracking-tight hover:text-purple-400 transition-colors duration-300">
-        AhhVeeDaa
-      </Link>
-      <div className="flex gap-8 text-sm">
-        <Link href="/about" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">About</Link>
-        <Link href="/work" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">Work</Link>
-        <Link href="/shop" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">Shop</Link>
-        <Link href="/inventions" className="text-gray-400 hover:text-gray-200 transition-colors duration-300">Inventions</Link>
-        <Link href="/contact" className="text-gray-400 hover:text-purple-400 transition-colors duration-300">Contact</Link>
-      </div>
-    </nav>
-  );
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.07] bg-[#090a0f]/75 backdrop-blur-xl">
+      <nav aria-label="Main navigation" className="page-shell flex h-20 items-center justify-between">
+        <Link href="/" className="group flex items-center gap-3 text-sm font-semibold tracking-wide text-white">
+          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/[0.04] text-xs text-violet-200 transition-colors group-hover:border-violet-300/50">AV</span>
+          <span>AhhVeeDaa</span>
+        </Link>
+
+        <div className="hidden items-center gap-1 md:flex">
+          {links.map(({ href, label }) => (
+            <Link key={href} href={href} className="rounded-full px-4 py-2 text-sm text-white/60 transition-colors hover:bg-white/[0.06] hover:text-white">
+              {label}
+            </Link>
+          ))}
+          <Link href="/contact" className="ml-3 rounded-full border border-white/20 px-4 py-2 text-sm text-white transition-colors hover:border-violet-300/50 hover:bg-violet-300/10">
+            Contact <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+
+        <button
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white md:hidden"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span aria-hidden="true" className="text-xl">{menuOpen ? '×' : '≡'}</span>
+        </button>
+      </nav>
+      {menuOpen && (
+        <div id="mobile-navigation" className="border-t border-white/[0.07] bg-[#090a0f]/95 px-4 py-4 backdrop-blur-xl md:hidden">
+          <div className="mx-auto flex max-w-6xl flex-col">
+            {[...links, { href: '/contact', label: 'Contact' }].map(({ href, label }) => (
+              <Link key={href} href={href} onClick={() => setMenuOpen(false)} className="rounded-xl px-4 py-3 text-base text-white/75 transition-colors hover:bg-white/[0.06] hover:text-white">
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </header>
+  )
 }

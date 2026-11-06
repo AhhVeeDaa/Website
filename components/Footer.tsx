@@ -16,8 +16,8 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="border-t border-gray-800 bg-black py-8 text-center text-gray-400">
-      <div className="mb-4 flex justify-center flex-wrap gap-4 px-4">
+    <footer className="border-t border-white/[0.08] bg-black/20 py-8 text-center text-gray-400">
+      <div className="mb-6 flex justify-center flex-wrap gap-3 px-4">
         {socials.map(({ href, label, Icon }) => (
           <a
             key={label}
@@ -25,13 +25,21 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-800 text-gray-300 hover:bg-purple-600 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            className="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 text-gray-300 transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300/40 hover:bg-violet-500/15 hover:text-white focus:outline-none focus:ring-2 focus:ring-violet-400"
           >
             <Icon className="w-5 h-5" />
           </a>
         ))}
       </div>
-      <p className="text-sm">&copy; 2026 AhhVeeDaa. All rights reserved.</p>
+      <div className="mb-5 flex flex-wrap justify-center gap-x-6 gap-y-2 px-4 text-xs text-white/50">
+        <a href="/about" className="hover:text-white">About</a>
+        <a href="/work" className="hover:text-white">Work</a>
+        <a href="/inventions" className="hover:text-white">Inventions</a>
+        <a href="/ventures" className="hover:text-white">Ventures</a>
+        <a href="/shop" className="hover:text-white">Shop</a>
+        <a href="/contact" className="hover:text-white">Contact</a>
+      </div>
+      <p className="text-xs">&copy; {new Date().getFullYear()} AhhVeeDaa. All rights reserved.</p>
     </footer>
   )
 }

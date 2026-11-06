@@ -11,19 +11,18 @@ export const metadata: Metadata = {
     template: '%s | AhhVeeDaa',
   },
   description:
-    'Creative technologist and media architect building proprietary systems across media, sound, narrative, and computation.',
+    'Creative technologist and media architect building across media, sound, literature and technology.',
   keywords: [
     'AhhVeeDaa',
     'Creative Technologist',
     'Media Architect',
-    'Systems Architect',
-    'Proprietary Systems',
-    'Audio Systems',
-    'Broadcast Architecture',
+    'Creative Technology',
+    'Media Architecture',
+    'Music and Sound',
+    'Writing and Publishing',
     'Experimental Technology',
-    'Systems Design',
   ],
-  authors: [{ name: 'AhhVeeDaa', url: 'https://ahhveedaa.com' }],
+  authors: [{ name: 'Avida Buyombo', url: 'https://ahhveedaa.com' }],
   creator: 'AhhVeeDaa',
   robots: {
     index: true,
@@ -46,22 +45,13 @@ export const metadata: Metadata = {
     siteName: 'AhhVeeDaa',
     title: 'AhhVeeDaa — Creative Technologist & Media Architect',
     description:
-      'Creative technologist and media architect building proprietary systems across media, sound, narrative, and computation.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'AhhVeeDaa — Creative Technologist & Media Architect',
-      },
-    ],
+      'Creative technologist and media architect building across media, sound, literature and technology.',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'AhhVeeDaa — Creative Technologist & Media Architect',
     description:
-      'Creative technologist and media architect building proprietary systems across media, sound, narrative, and computation.',
-    images: ['/og-image.jpg'],
+      'Creative technologist and media architect building across media, sound, literature and technology.',
   },
 };
 
@@ -76,12 +66,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {
                 '@context': 'https://schema.org',
                 '@type': 'Person',
-                name: 'AhhVeeDaa',
+                name: 'Avida Buyombo',
+                alternateName: 'AhhVeeDaa',
                 jobTitle: 'Creative Technologist',
                 url: 'https://ahhveedaa.com',
                 description:
-                  'Creative technologist and media architect operating across sound, narrative, and systems design.',
-                sameAs: [],
+                  'Creative technologist and media architect working across sound, narrative, technology and systems design.',
+                sameAs: [
+                  'https://instagram.com/ahhveedaa',
+                  'https://soundcloud.com/ahhveedaa',
+                  'https://www.linkedin.com/in/avida-buyombo-40b235115/',
+                ],
               },
               {
                 '@context': 'https://schema.org',
@@ -89,13 +84,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 name: 'AhhVeeDaa',
                 url: 'https://ahhveedaa.com',
                 description:
-                  'Creative technologist and media architect building proprietary systems across media, sound, narrative, and computation.',
+                  'Creative technologist and media architect building across media, sound, literature and technology.',
               },
             ]),
           }}
         />
       </head>
-      <body className="bg-black text-white min-h-screen flex flex-col">
+      <body className="text-white min-h-screen flex flex-col">
         <Navbar />
         <div className="flex-1 pt-20">
           {children}

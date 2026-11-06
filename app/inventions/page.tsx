@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import WitnessOneModel from '@/components/WitnessOneModel'
 
 export const metadata: Metadata = {
   title: 'Inventions',
@@ -13,10 +15,11 @@ export const metadata: Metadata = {
 }
 
 const concepts = [
-  { title: 'Witness', status: 'Development', category: 'Physical AI companion', description: 'A mobile robotic companion concept with an articulated upper body. This product exploration is separate from the published book of the same name.', tone: 'text-violet-200' },
-  { title: 'VidaRide', status: 'Concept', category: 'Mobility', description: 'An early intelligent mobility and vehicle technology concept, distinct from the newer AVD automotive sensing direction.', tone: 'text-blue-200' },
-  { title: 'AVD AI Phone', status: 'Concept', category: 'AI-native device', description: 'Exploration of an AI-native mobile device and operating environment.', tone: 'text-teal-200' },
-  { title: 'Digital Twin of Africa', status: 'Research', category: 'Computational systems', description: 'An AI-driven digital representation and infrastructure concept.', tone: 'text-amber-200' },
+  { title: 'AVD AI Phone', status: 'Concept', category: 'AI-native device', tone: 'text-teal-200' },
+  { title: 'Digital Twin of Africa', status: 'Concept in development', category: 'Computational systems', tone: 'text-amber-200' },
+  { title: 'Kora', status: 'Concept in development', category: 'Concept', tone: 'text-amber-200' },
+  { title: 'AVDNET', status: 'Concept in development', category: 'Concept', tone: 'text-blue-200' },
+  { title: 'Lekky', status: 'Concept in development', category: 'Concept', tone: 'text-violet-200' },
 ]
 
 export default function Inventions() {
@@ -38,11 +41,74 @@ export default function Inventions() {
         <p className="relative mt-5 max-w-2xl text-sm leading-6 text-white/45">Technical implementation details are not public. No schematics or unpublished technical materials are disclosed here.</p>
       </section>
 
+      <section className="mt-8">
+        <WitnessOneModel />
+      </section>
+
       <section className="mt-12 grid gap-4 md:grid-cols-2">
-        {concepts.map(({ title, status, category, description, tone }) => (
+        <article className="glass-panel overflow-hidden rounded-2xl">
+          <div className="p-6 pb-0 sm:p-7 sm:pb-0">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="eyebrow text-blue-200">Mobility concept</p>
+              <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">Concept in development</span>
+            </div>
+            <h2 className="mt-6 text-2xl font-medium">VidaRide</h2>
+          </div>
+          <Image
+            src="/images/projects/vidaride-concept.png"
+            alt="VidaRide concept artwork"
+            width={1149}
+            height={1369}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="mt-6 h-auto w-full"
+          />
+        </article>
+
+        <article className="glass-panel overflow-hidden rounded-2xl">
+          <div className="p-6 pb-0 sm:p-7 sm:pb-0">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="eyebrow text-amber-200">Concept</p>
+              <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">Concept in development</span>
+            </div>
+            <div className="mt-6 flex items-center gap-4">
+              <Image
+                src="/images/projects/kora-mark.png"
+                alt="Kora project mark"
+                width={1254}
+                height={1254}
+                sizes="80px"
+                className="h-20 w-20 rounded-lg bg-white object-contain"
+              />
+              <h2 className="text-2xl font-medium">Kora</h2>
+            </div>
+          </div>
+          <Image
+            src="/images/projects/kora-network.png"
+            alt="Kora project concept artwork showing an Africa rail network"
+            width={1536}
+            height={1024}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="mt-6 h-auto w-full"
+          />
+          <Image
+            src="/images/projects/kora-concept.png"
+            alt="Kora project concept poster"
+            width={1024}
+            height={1536}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="h-auto w-full"
+          />
+        </article>
+      </section>
+
+      <section className="mt-4 grid gap-4 md:grid-cols-2">
+        {concepts.map(({ title, status, category, tone }) => (
           <article key={title} className="glass-panel rounded-2xl p-6 sm:p-7">
-            <div className="flex flex-wrap items-center justify-between gap-3"><p className={`eyebrow ${tone}`}>{category}</p><span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">{status}</span></div>
-            <h2 className="mt-8 text-2xl font-medium">{title}</h2><p className="mt-3 text-sm leading-6 text-muted">{description}</p>
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className={`eyebrow ${tone}`}>{category}</p>
+              <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">{status}</span>
+            </div>
+            <h2 className="mt-8 text-2xl font-medium">{title}</h2>
           </article>
         ))}
       </section>

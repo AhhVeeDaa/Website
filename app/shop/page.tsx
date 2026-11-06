@@ -44,6 +44,8 @@ export default function Shop() {
           <p className="mt-3 text-sm leading-6 text-muted">AVD clothing concepts, Teemill merchandise and digital or physical product experiments form part of the wider design practice. Check the linked shop for current listings.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="https://ahhveedaa.etsy.com/uk" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 transition-colors hover:border-violet-300/40 hover:text-white">Etsy ↗</a>
+            <a href="https://ahhveedaa.teemill.com/" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 transition-colors hover:border-violet-300/40 hover:text-white">Clothing &amp; Merchandise ↗</a>
+            <a href="https://ahhveedaa.shoobs.com/#past" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/70 transition-colors hover:border-violet-300/40 hover:text-white">Events &amp; Tickets ↗</a>
           </div>
         </div>
       </section>

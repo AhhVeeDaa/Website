@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -29,13 +30,14 @@ export default function About() {
           <p>This platform presents selected outputs and ongoing explorations. The broader architecture continues to evolve.</p>
         </div>
         <aside className="glass-panel h-fit rounded-2xl p-7">
-          <p className="eyebrow mb-6">The practice</p>
-          <ul className="space-y-4 text-sm text-white/70">
-            <li className="flex items-center justify-between border-b border-white/10 pb-4"><span>Sound</span><span className="text-blue-200">01</span></li>
-            <li className="flex items-center justify-between border-b border-white/10 pb-4"><span>Narrative</span><span className="text-violet-200">02</span></li>
-            <li className="flex items-center justify-between border-b border-white/10 pb-4"><span>Technology</span><span className="text-teal-200">03</span></li>
-            <li className="flex items-center justify-between"><span>Systems design</span><span className="text-amber-200">04</span></li>
-          </ul>
+          <Image
+            src="/images/avida-buyombo.jpg"
+            alt="Avida Buyombo"
+            width={640}
+            height={640}
+            sizes="(max-width: 768px) 100vw, 320px"
+            className="aspect-square w-full rounded-xl object-cover"
+          />
         </aside>
       </div>
       <div className="mt-20 border-t border-white/10 pt-8">

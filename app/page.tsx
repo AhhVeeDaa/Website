@@ -53,7 +53,7 @@ export default function Home() {
             <h2 className="text-4xl font-medium sm:text-6xl">The Universe</h2>
           </div>
           <p className="max-w-md text-sm leading-7 text-muted">
-            One body of work moving between culture, creative expression and computation. Explore each world.
+            One body working &amp; moving between culture, creative expression and computation. Explore his world.
           </p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

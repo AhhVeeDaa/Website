@@ -7,9 +7,10 @@ type ArtworkLightboxProps = {
   src: string
   alt: string
   title: string
+  previewOnly?: boolean
 }
 
-export default function ArtworkLightbox({ src, alt, title }: ArtworkLightboxProps) {
+export default function ArtworkLightbox({ src, alt, title, previewOnly = false }: ArtworkLightboxProps) {
   const [open, setOpen] = useState(false)
   const dialogRef = useRef<HTMLDialogElement>(null)
   const closeRef = useRef<HTMLButtonElement>(null)
@@ -34,21 +35,27 @@ export default function ArtworkLightbox({ src, alt, title }: ArtworkLightboxProp
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
         aria-label={`Preview ${title}`}
-        className="group relative block w-full overflow-hidden rounded-xl border border-white/10 bg-black/30 text-left transition-colors hover:border-violet-300/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300"
+        className={previewOnly
+          ? 'inline-flex min-h-11 items-center rounded-full border border-white/15 px-4 text-sm text-white/75 transition-colors hover:border-violet-300/50 hover:bg-violet-300/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300'
+          : 'group relative block w-full overflow-hidden rounded-xl border border-white/10 bg-black/30 text-left transition-colors hover:border-violet-300/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300'}
       >
-        <span className="relative block aspect-[4/3] w-full">
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 36rem"
-            className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-          />
-          <span className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-10 text-sm text-white">
-            <span>{title}</span>
-            <span className="text-white/75">Preview ↗</span>
+        {previewOnly ? (
+          <>Preview <span aria-hidden="true" className="ml-2">↗</span></>
+        ) : (
+          <span className="relative block aspect-[4/3] w-full">
+            <Image
+              src={src}
+              alt={alt}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 36rem"
+              className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+            <span className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-10 text-sm text-white">
+              <span>{title}</span>
+              <span className="text-white/75">Preview ↗</span>
+            </span>
           </span>
-        </span>
+        )}
       </button>
       <dialog
         ref={dialogRef}

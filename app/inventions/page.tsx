@@ -53,6 +53,7 @@ export default function Inventions() {
               src="/images/projects/witness-one-concept.png"
               alt="Witness One concept artwork showing a small robot on a two-wheeled base."
               title="Witness One"
+              previewOnly
             />
             <p className="mt-3 text-sm leading-6 text-muted">Concept artwork preview.</p>
           </div>
@@ -73,6 +74,7 @@ export default function Inventions() {
               src="/images/projects/vidaride-concept.png"
               alt="VidaRide concept artwork"
               title="VidaRide"
+              previewOnly
             />
             <p className="mt-3 text-sm leading-6 text-muted">Mobility concept artwork preview.</p>
           </div>
@@ -91,16 +93,19 @@ export default function Inventions() {
               src="/images/projects/kora-mark.png"
               alt="Kora project mark"
               title="Kora mark"
+              previewOnly
             />
             <ArtworkLightbox
               src="/images/projects/kora-network.png"
               alt="Kora project concept artwork showing an Africa rail network"
               title="Kora network concept"
+              previewOnly
             />
             <ArtworkLightbox
               src="/images/projects/kora-concept.png"
               alt="Kora project concept poster"
               title="Kora concept poster"
+              previewOnly
             />
           </div>
           <p className="px-6 pb-6 text-sm leading-6 text-muted sm:px-7">Concept artwork previews.</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import ArtworkLightbox from '@/components/ArtworkLightbox'
 
 export const metadata: Metadata = {
   title: 'AhhVeeDaa — Creative Technologist & Media Architect',
@@ -29,16 +30,23 @@ export default function Home() {
           <h1 className="max-w-5xl text-[clamp(3.8rem,11vw,9rem)] font-semibold leading-[0.9] tracking-[-0.075em]">
             AhhVeeDaa<span className="text-violet-300">.</span>
           </h1>
-          <div className="mt-8 flex max-w-4xl flex-col gap-7 md:flex-row md:items-end md:justify-between">
+          <div className="mt-8 grid max-w-5xl gap-7 md:grid-cols-[minmax(0,1fr)_14rem] md:items-end">
             <div>
               <p className="text-lg text-white sm:text-2xl">Creative Technologist &amp; Media Architect.</p>
               <p className="mt-3 max-w-xl text-sm leading-7 text-muted sm:text-base">
                 Building across media, sound, literature and technology.
               </p>
             </div>
-            <a href="#universe" className="group inline-flex min-h-12 items-center gap-3 self-start rounded-full border border-white/15 px-5 text-sm text-white transition-colors hover:border-violet-300/50 hover:bg-violet-300/10 md:self-auto">
-              Explore the universe <span aria-hidden="true" className="transition-transform group-hover:translate-y-1">↓</span>
-            </a>
+            <div className="flex flex-col gap-4">
+              <ArtworkLightbox
+                src="/images/avida-buyombo.jpg"
+                alt="Avida Buyombo"
+                title="Avida Buyombo"
+              />
+              <a href="#universe" className="group inline-flex min-h-12 items-center gap-3 self-start rounded-full border border-white/15 px-5 text-sm text-white transition-colors hover:border-violet-300/50 hover:bg-violet-300/10">
+                Explore the universe <span aria-hidden="true" className="transition-transform group-hover:translate-y-1">↓</span>
+              </a>
+            </div>
           </div>
           <div className="mt-20 flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-white/40">
             <span className="h-px w-12 bg-violet-300/60" /> Independent · Interdisciplinary · In evolution

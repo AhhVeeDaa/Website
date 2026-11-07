@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import ArtworkLightbox from '@/components/ArtworkLightbox'
 
 export const metadata: Metadata = {
@@ -20,7 +19,6 @@ type MediaProject = {
   tone: string
   image?: string
   alt?: string
-  preview?: boolean
 }
 
 const projects: MediaProject[] = [
@@ -30,7 +28,6 @@ const projects: MediaProject[] = [
     tone: 'text-teal-200',
     image: '/images/projects/tether-concept.png',
     alt: 'Tether concept artwork showing two figures in a futuristic city.',
-    preview: true,
   },
   {
     title: 'Kampala Confessions',
@@ -166,26 +163,12 @@ export default function Work() {
           </div>
         </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {projects.map(({ title, detail, tone, image, alt, preview }) => (
+          {projects.map(({ title, detail, tone, image, alt }) => (
             <article key={title} className="glass-panel overflow-hidden rounded-xl">
-              {image && (
-                <Image
-                  src={image}
-                  alt={alt ?? ''}
-                  width={1024}
-                  height={1536}
-                  sizes="(max-width: 640px) 100vw, 50vw"
-                  className="aspect-[2/1] w-full object-cover object-[center_38%]"
-                />
-              )}
               <div className="p-5">
                 <h3 className={`text-lg font-medium ${tone}`}>{title}</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">{detail}</p>
-                {preview && image && alt && (
-                  <div className="mt-4">
-                    <ArtworkLightbox src={image} alt={alt} title={title} />
-                  </div>
-                )}
+                {image && alt && <ArtworkLightbox src={image} alt={alt} title={title} />}
               </div>
             </article>
           ))}

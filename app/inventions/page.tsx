@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import ArtworkLightbox from '@/components/ArtworkLightbox'
 
 export const metadata: Metadata = {
@@ -40,7 +39,7 @@ export default function Inventions() {
 
       <section className="mt-8">
         <article className="glass-panel overflow-hidden rounded-2xl">
-          <div className="flex flex-wrap items-start justify-between gap-4 p-6 sm:p-7">
+          <div className="p-6 sm:p-7">
             <div>
               <div className="flex flex-wrap items-center gap-3">
                 <p className="eyebrow text-blue-200">Witness One · Physical AI companion</p>
@@ -48,20 +47,14 @@ export default function Inventions() {
               </div>
               <h2 className="mt-3 text-xl font-medium">Witness One</h2>
             </div>
+          </div>
+          <div className="px-6 pb-6 sm:px-7 sm:pb-7">
             <ArtworkLightbox
               src="/images/projects/witness-one-concept.png"
               alt="Witness One concept artwork showing a small robot on a two-wheeled base."
               title="Witness One"
             />
           </div>
-          <Image
-            src="/images/projects/witness-one-concept.png"
-            alt="Witness One concept artwork showing a small robot on a two-wheeled base."
-            width={1199}
-            height={1312}
-            sizes="(max-width: 768px) 100vw, 76rem"
-            className="h-auto w-full"
-          />
         </article>
       </section>
 
@@ -74,14 +67,13 @@ export default function Inventions() {
             </div>
             <h2 className="mt-6 text-2xl font-medium">VidaRide</h2>
           </div>
-          <Image
-            src="/images/projects/vidaride-concept.png"
-            alt="VidaRide concept artwork"
-            width={1149}
-            height={1369}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="mt-6 h-auto w-full"
-          />
+          <div className="p-6 pt-0 sm:p-7 sm:pt-0">
+            <ArtworkLightbox
+              src="/images/projects/vidaride-concept.png"
+              alt="VidaRide concept artwork"
+              title="VidaRide"
+            />
+          </div>
         </article>
 
         <article className="glass-panel overflow-hidden rounded-2xl">
@@ -90,34 +82,25 @@ export default function Inventions() {
               <p className="eyebrow text-amber-200">Concept</p>
               <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">Concept in development</span>
             </div>
-            <div className="mt-6 flex items-center gap-4">
-              <Image
-                src="/images/projects/kora-mark.png"
-                alt="Kora project mark"
-                width={1254}
-                height={1254}
-                sizes="80px"
-                className="h-20 w-20 rounded-lg bg-white object-contain"
-              />
-              <h2 className="text-2xl font-medium">Kora</h2>
-            </div>
+            <h2 className="mt-6 text-2xl font-medium">Kora</h2>
           </div>
-          <Image
-            src="/images/projects/kora-network.png"
-            alt="Kora project concept artwork showing an Africa rail network"
-            width={1536}
-            height={1024}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="mt-6 h-auto w-full"
-          />
-          <Image
-            src="/images/projects/kora-concept.png"
-            alt="Kora project concept poster"
-            width={1024}
-            height={1536}
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="h-auto w-full"
-          />
+          <div className="grid gap-4 p-6 pt-0 sm:grid-cols-2 sm:p-7 sm:pt-0">
+            <ArtworkLightbox
+              src="/images/projects/kora-mark.png"
+              alt="Kora project mark"
+              title="Kora mark"
+            />
+            <ArtworkLightbox
+              src="/images/projects/kora-network.png"
+              alt="Kora project concept artwork showing an Africa rail network"
+              title="Kora network concept"
+            />
+            <ArtworkLightbox
+              src="/images/projects/kora-concept.png"
+              alt="Kora project concept poster"
+              title="Kora concept poster"
+            />
+          </div>
         </article>
       </section>
 

@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 }
 
 const concepts = [
-  { title: 'AVD AI Phone', status: 'Concept', category: 'AI-native device', tone: 'text-teal-200' },
-  { title: 'Digital Twin of Africa', status: 'Concept in development', category: 'Computational systems', tone: 'text-amber-200' },
-  { title: 'AVDNET', status: 'Concept in development', category: 'Concept', tone: 'text-blue-200' },
-  { title: 'Lekky', status: 'Concept in development', category: 'Concept', tone: 'text-violet-200' },
+  { title: 'AVD AI Phone', status: 'Concept', category: 'AI-native device', description: 'Concept in development.', tone: 'text-teal-200' },
+  { title: 'Digital Twin of Africa', status: 'Concept in development', category: 'Computational systems', description: 'Concept in development.', tone: 'text-amber-200' },
+  { title: 'AVDNET', status: 'Concept in development', category: 'Concept', description: 'Concept in development.', tone: 'text-blue-200' },
+  { title: 'Lekky', status: 'Concept in development', category: 'Concept', description: 'Concept in development.', tone: 'text-violet-200' },
 ]
 
 export default function Inventions() {
@@ -54,6 +54,7 @@ export default function Inventions() {
               alt="Witness One concept artwork showing a small robot on a two-wheeled base."
               title="Witness One"
             />
+            <p className="mt-3 text-sm leading-6 text-muted">Concept artwork preview.</p>
           </div>
         </article>
       </section>
@@ -73,6 +74,7 @@ export default function Inventions() {
               alt="VidaRide concept artwork"
               title="VidaRide"
             />
+            <p className="mt-3 text-sm leading-6 text-muted">Mobility concept artwork preview.</p>
           </div>
         </article>
 
@@ -101,17 +103,19 @@ export default function Inventions() {
               title="Kora concept poster"
             />
           </div>
+          <p className="px-6 pb-6 text-sm leading-6 text-muted sm:px-7">Concept artwork previews.</p>
         </article>
       </section>
 
       <section className="mt-4 grid gap-4 md:grid-cols-2">
-        {concepts.map(({ title, status, category, tone }) => (
+        {concepts.map(({ title, status, category, description, tone }) => (
           <article key={title} className="glass-panel rounded-2xl p-6 sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <p className={`eyebrow ${tone}`}>{category}</p>
               <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-white/55">{status}</span>
             </div>
             <h2 className="mt-8 text-2xl font-medium">{title}</h2>
+            <p className="mt-3 text-sm leading-6 text-muted">{description}</p>
           </article>
         ))}
       </section>

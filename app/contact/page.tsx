@@ -66,10 +66,12 @@ export default function Contact() {
         <aside className="space-y-4">
           <div className="glass-panel rounded-2xl p-6">
             <p className="eyebrow mb-5">Direct contact</p>
+            <p className="mb-4 text-sm leading-6 text-muted">Reach out via WhatsApp.</p>
             <a href="https://wa.me/447944958815" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center rounded-full border border-white/15 px-5 text-sm text-white transition-colors hover:border-violet-300/40 hover:bg-violet-300/10">WhatsApp ↗</a>
           </div>
           <div className="glass-panel rounded-2xl p-6">
             <p className="eyebrow mb-5">Email</p>
+            <p className="mb-4 text-sm leading-6 text-muted">Choose an address for direct correspondence.</p>
             <div className="space-y-3 text-sm">
               <a href="mailto:avidabuyombo1@gmail.com" className="block text-white/75 transition-colors hover:text-white">avidabuyombo1@gmail.com</a>
               <a href="mailto:Avida@ahhveedaa.com" className="block text-white/75 transition-colors hover:text-white">Avida@ahhveedaa.com</a>

@@ -39,14 +39,17 @@ const projects: MediaProject[] = [
 const playlistEmbeds = [
   {
     title: 'The AVD Playlist',
+    detail: 'Playlist on Spotify.',
     src: 'https://open.spotify.com/embed/playlist/1J4EHhcgZC5lh704ZksHYB?utm_source=generator&theme=0&si=9d4b0048df074e5c',
   },
   {
     title: 'Digital Sunset',
+    detail: 'Album on Spotify.',
     src: 'https://open.spotify.com/embed/album/6U0K9APl4GIwchbKwFymyt?utm_source=generator&theme=0&si=f4b757dad1354296',
   },
   {
     title: 'Asibe Happy',
+    detail: 'Album on Spotify.',
     src: 'https://open.spotify.com/embed/album/0RORB0epltXOtnHMwDhk4g?utm_source=generator&theme=0&si=b5a0a78d4d2141e6',
   },
 ]
@@ -77,6 +80,7 @@ export default function Work() {
             AhhVeeDaa on Spotify ↗
           </a>
         </div>
+        <p className="mb-3 text-sm text-muted">Artist catalogue on Spotify.</p>
         <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
           <iframe
             data-testid="embed-iframe"
@@ -189,6 +193,7 @@ export default function Work() {
           >
             <p className="eyebrow text-violet-200">Book</p>
             <h3 className="mt-8 text-2xl font-medium">TOP GIRL</h3>
+            <p className="mt-3 text-sm leading-6 text-muted">Book sample available on Amazon.</p>
             <span className="mt-6 block text-sm text-white/60">Read a sample ↗</span>
           </a>
           <a
@@ -199,6 +204,7 @@ export default function Work() {
           >
             <p className="eyebrow text-blue-200">Book • The inspiration behind the robot</p>
             <h3 className="mt-8 text-2xl font-medium">WITNESS</h3>
+            <p className="mt-3 text-sm leading-6 text-muted">Book sample available on Amazon.</p>
             <span className="mt-6 block text-sm text-white/60">Read a sample ↗</span>
           </a>
         </div>
@@ -207,9 +213,10 @@ export default function Work() {
       <section className="border-t border-white/10 py-12">
         <p className="eyebrow mb-3">04 / Selected projects</p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {playlistEmbeds.map(({ title, src }) => (
+          {playlistEmbeds.map(({ title, detail, src }) => (
             <article key={title} className="glass-panel overflow-hidden rounded-xl">
               <h3 className="px-5 pt-5 text-lg font-medium">{title}</h3>
+              <p className="px-5 pt-2 text-sm text-muted">{detail}</p>
               <iframe
                 className="mt-4 h-[352px] w-full"
                 src={src}

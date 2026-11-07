@@ -91,6 +91,7 @@ export default function Home() {
           <div>
             <p className="eyebrow mb-4">Selected direction</p>
             <h2 className="max-w-2xl text-3xl font-medium leading-tight sm:text-4xl">Ideas move between disciplines. The work is to make the connections tangible.</h2>
+            <p className="mt-4 max-w-xl text-sm leading-6 text-muted">Explore selected concepts and ongoing work across the site.</p>
           </div>
           <a href="/inventions" className="inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-medium text-black transition-colors hover:bg-violet-200">View current explorations ↗</a>
         </div>

@@ -24,9 +24,9 @@ type Initiative = {
 
 const initiatives: Initiative[] = [
   { name: 'La Vie Tech Ltd', type: 'Technology venture', status: 'Company', description: 'Founded by Avida Buyombo, with a focus on photonics, AI, IoT and proprietary systems.', tone: 'text-violet-200' },
-  { name: 'Olives Expeditions', type: 'Company', status: 'Company', tone: 'text-amber-200', href: 'https://www.olivesexpeditions.uk/', linkLabel: 'Visit company ↗' },
+  { name: 'Olives Expeditions', type: 'Company', status: 'Company', description: 'Company information and expedition details.', tone: 'text-amber-200', href: 'https://www.olivesexpeditions.uk/', linkLabel: 'Visit company ↗' },
   { name: 'Ubuntu Hub', type: 'AI platform & infrastructure', status: 'Development', description: 'Sovereign AI orchestration and infrastructure, with African AI infrastructure and governance in focus.', tone: 'text-teal-200', href: 'https://ubuntuhub.io', linkLabel: 'Visit platform ↗' },
-  { name: 'Digi Mbongo', type: 'Payments infrastructure concept', status: 'Concept', description: 'A developing concept exploring intelligent routing between existing banks and mobile-money networks. Not a live payment service.', tone: 'text-amber-200' },
+  { name: 'Digi Mbongo', type: 'Payments infrastructure concept', status: 'Concept', description: 'Demo site for the Digi Mbongo concept. Not a live payment service.', tone: 'text-amber-200', href: 'https://digi-mbongo.vercel.app/', linkLabel: 'View demo ↗' },
   { name: 'Tether', type: 'Shared-world concept', status: 'Concept in development', description: 'Persistent social gaming and player-owned social environments and digital spaces.', tone: 'text-blue-200' },
   { name: 'VidaRide', type: 'Mobility concept', status: 'Concept', description: 'An early intelligent mobility and vehicle technology direction. Distinct from the newer AVD automotive sensing research.', tone: 'text-indigo-200' },
   { name: 'Inga Compute Infrastructure', type: 'Infrastructure vision', status: 'Long-term vision', description: 'A longer-term vision for African compute and energy infrastructure.', tone: 'text-emerald-200' },

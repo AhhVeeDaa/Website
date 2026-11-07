@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import ArtworkLightbox from '@/components/ArtworkLightbox'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'AhhVeeDaa — Creative Technologist & Media Architect',
@@ -38,10 +38,13 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <ArtworkLightbox
+              <Image
                 src="/images/avida-buyombo.jpg"
                 alt="Avida Buyombo"
-                title="Avida Buyombo"
+                width={640}
+                height={640}
+                sizes="(max-width: 768px) 100vw, 224px"
+                className="aspect-square w-full rounded-xl object-cover"
               />
               <a href="#universe" className="group inline-flex min-h-12 items-center gap-3 self-start rounded-full border border-white/15 px-5 text-sm text-white transition-colors hover:border-violet-300/50 hover:bg-violet-300/10">
                 Explore the universe <span aria-hidden="true" className="transition-transform group-hover:translate-y-1">↓</span>

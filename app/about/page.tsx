@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import ArtworkLightbox from '@/components/ArtworkLightbox'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -30,10 +30,13 @@ export default function About() {
           <p>This platform presents selected outputs and ongoing explorations. The broader architecture continues to evolve.</p>
         </div>
         <aside className="glass-panel h-fit rounded-2xl p-7">
-          <ArtworkLightbox
+          <Image
             src="/images/avida-buyombo.jpg"
             alt="Avida Buyombo"
-            title="Avida Buyombo"
+            width={640}
+            height={640}
+            sizes="(max-width: 768px) 100vw, 320px"
+            className="aspect-square w-full rounded-xl object-cover"
           />
         </aside>
       </div>
